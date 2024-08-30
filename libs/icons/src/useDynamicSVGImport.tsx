@@ -85,9 +85,9 @@ function getIcon(
   name: string,
 ): Promise<typeof import('*.svg')> {
   if (type === 'token') {
-    return import(`./tokens/${name}.svg`);
+    return import(`./tokens/${name}.svg?react`);
   } else {
-    return import(`./chains/${name}.svg`);
+    return import(`./chains/${name}.svg?react`);
   }
 }
 

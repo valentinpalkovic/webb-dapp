@@ -1,4 +1,4 @@
-import { StorybookConfig } from '@storybook/nextjs';
+import { StorybookConfig } from '@storybook/experimental-nextjs-vite';
 
 import { dirname, join } from 'node:path';
 
@@ -13,6 +13,7 @@ export default {
     getAbsolutePath('@storybook/addon-a11y'),
     getAbsolutePath('@storybook/addon-webpack5-compiler-swc'),
     getAbsolutePath('@chromatic-com/storybook'),
+    getAbsolutePath('@storybook/experimental-addon-vitest'),
   ],
   // uncomment the property below if you want to apply some webpack config globally
   // webpackFinal: async (config, { configType }) => {
@@ -20,7 +21,7 @@ export default {
   //   return config;
   // },
   framework: '@storybook/nextjs',
-} as const satisfies StorybookConfig;
+};
 
 function getAbsolutePath(value: string) {
   return dirname(require.resolve(join(value, 'package.json')));
