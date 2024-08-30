@@ -10,19 +10,5 @@ export const Modal: FC<DialogPrimitive.DialogProps> = ({
   onOpenChange: onOpenChangeProps,
   ...props
 }) => {
-  const [isOpen, setIsOpen] = useState(open ?? defaultOpen);
-
-  const onOpenChange = useCallback(
-    (open: boolean) => {
-      setIsOpen(open);
-      onOpenChangeProps?.(open);
-    },
-    [setIsOpen, onOpenChangeProps],
-  );
-
-  return (
-    <DialogPrimitive.Root open={isOpen} onOpenChange={onOpenChange} {...props}>
-      {children}
-    </DialogPrimitive.Root>
-  );
+  throw new Error('Not implemented');
 };
